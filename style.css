@@ -1,0 +1,140 @@
+:root {
+  font-size: 62.5%;
+
+  --ff-fraunces: "Fraunces", serif;
+  --ff-montserrat: "Montserrat", sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  --DarkCyan: hsl(158, 36%, 37%);
+  --ultraDarkCyan: hsl(158, 36%, 20%);
+  --Cream: hsl(30, 38%, 92%);
+
+  --VeryDarkBlue: hsl(212, 21%, 14%);
+  --DarkGrayishBlue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+    font-family: var(--ff-montserrat);
+    font-weight: var(--fw-regular);
+    font-size: 1.4rem;
+
+    line-height: 1.7;
+
+    color: var(--DarkGrayishBlue);
+    background-color: var(--Cream);
+
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+
+    margin: 1.6rem;
+}
+
+/* utilities */
+.flexGroup {
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.visuallyHidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* product styles */
+
+.product {
+    --content-padding: 2.4rem;
+    --content-spacing: 1.6rem;
+
+    display: grid;
+
+    background-color: var(--White);
+    border-radius: 0.8rem;
+    overflow: hidden;
+
+    max-width: 600px;
+}
+
+@media (min-width: 600px) {
+    .product {
+        --content-padding: 3.2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.productContent {
+    display: grid;
+    gap: var(--content-spacing);
+    padding: var(--content-padding);
+}
+
+.productCategory {
+    text-transform: uppercase;
+    letter-spacing: 0.6rem;
+}
+
+.productTitle  {
+    font-size: 2.4rem;
+    font-family: var(--ff-fraunces);
+    color: var(--VeryDarkBlue);
+}
+
+
+.productPrice {
+    font-size: 3.2rem;
+    font-family: var(--ff-fraunces);
+
+    color: var(--DarkCyan);
+}
+
+/* button */
+.button {
+    border: 0;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    
+    cursor: pointer;
+    
+    padding: 0.75em 1.5em;
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+   
+    color: var(--White);
+    background-color: var(--DarkCyan);
+
+    font-weight: var(--fw-bold);
+    font-size: 1.48rem;
+}
+
+.button:is(:hover, :focus){
+    background-color: var(--ultraDarkCyan);
+}
